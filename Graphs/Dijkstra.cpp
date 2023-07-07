@@ -8,7 +8,7 @@ using namespace std;
 
 
 int main()
-{
+{ 
     int N, E, source, n1, n2, w;
     cout << "Enter the number of node: ";
     cin >> N;

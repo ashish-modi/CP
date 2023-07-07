@@ -4,7 +4,7 @@
 using namespace std;
 
 int fun(int M, int N, vector<vector<int>> &maze, vector<vector<int>> &dp)
-{
+{ 
     if(dp[M][N] == -2)
     {
         if(maze[M][N] == -1)

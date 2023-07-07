@@ -5,7 +5,7 @@ using namespace std;
 
 int fun(int index, vector<int> &weights, vector<int> &values, int req_W, vector<vector<int>> &dp)
 {
-    if(dp[index][req_W] == -1)
+    if(dp[index][req_W] == -1) 
     {   
         if(index == 0 || req_W == 0)
         {

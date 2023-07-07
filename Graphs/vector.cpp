@@ -2,7 +2,7 @@
 #include<vector>
 
 using namespace std;
-
+ 
 void display(vector<int> &v)
 {
     vector<int>::iterator iter1;

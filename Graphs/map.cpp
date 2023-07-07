@@ -6,7 +6,7 @@ using namespace std;
 
 
 void display(map<int,char> M)
-{
+{ 
     for(auto iter: M)        // iter is the iterator for map M
     {
         // key can be accessed using iter.first

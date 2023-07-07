@@ -3,7 +3,7 @@
 using namespace std;
 
 class my_fun
-{
+{ 
     public:
     int operator()(pair<int,int> p1, pair<int,int> p2)
     {

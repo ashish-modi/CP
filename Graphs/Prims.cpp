@@ -5,7 +5,6 @@
 using namespace std;
 
 
-
 struct triple
 {
     int weight;

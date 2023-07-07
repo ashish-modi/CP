@@ -4,7 +4,7 @@
 using namespace std;
 
 bool fun(int index, int target, vector<int> &arr)
-{
+{ 
     if(index == 0)
     {
         if(arr[index] == target)

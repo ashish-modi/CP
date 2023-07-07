@@ -4,7 +4,7 @@
 using namespace std;
 
 int fun(int M, int N, vector<vector<int>> &dp)
-{
+{ 
     if(dp[M][N] == -1)
     {
         if(N == 0 || M == 0)

@@ -6,7 +6,7 @@
 using namespace std;
 
 int main()
-{
+{ 
     int N,E,n1,n2; 
     cout << "Enter number of nodes: ";
     cin >> N;

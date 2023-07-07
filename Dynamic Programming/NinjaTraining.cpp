@@ -5,7 +5,7 @@
 using namespace std;
 
 int fun(int N, int c,vector<vector<int>> &train, vector<vector<int>> &dp)
-{
+{ 
     if(dp[N][c] == 0)
     {
         if(N== 0)

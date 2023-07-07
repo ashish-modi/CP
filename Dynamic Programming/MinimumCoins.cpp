@@ -5,7 +5,7 @@
 using namespace std;
 
 int fun(int index, int target, vector<int> &nums)
-{
+{ 
     if(target == 0)
         return 0;
     else if(index == 0)

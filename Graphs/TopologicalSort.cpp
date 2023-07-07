@@ -2,7 +2,7 @@
 
 using namespace std;
 #include<stack>
-
+ 
 void dfs(int node, vector<vector<int>> &graph, vector<int> &visited, stack<int> &s)
 {
     visited[node] = 1;

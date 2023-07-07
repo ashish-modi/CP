@@ -3,7 +3,7 @@
 
 #include<iostream>
 #include<vector>
-using namespace std;
+using namespace std; 
 
 struct triple{
     int node1;

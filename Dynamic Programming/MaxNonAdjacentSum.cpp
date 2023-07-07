@@ -6,7 +6,7 @@ int fun(int n, vector<int> &nums, vector<int> &dp)
 {
 //    cout << endl << "Entering fun " << n << endl;
     if(n == 0 || n == 1) 
-    {
+    { 
         dp[n] = nums[n];
         return dp[n];
     }

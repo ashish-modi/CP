@@ -8,7 +8,7 @@ struct triple{
     int weight;
     int n1;
     int n2;
-};
+}; 
 
 class my_function
 {

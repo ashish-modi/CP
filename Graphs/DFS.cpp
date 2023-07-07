@@ -4,7 +4,7 @@
 using namespace std;
 
 int main()
-{
+{ 
     int N, E, n1, n2, node, flag;
 
     cout << "Enter the number of nodes : ";

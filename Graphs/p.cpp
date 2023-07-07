@@ -3,7 +3,7 @@
 using namespace std;
 
 int main()
-{
+{ 
     string S ="HEaLLOh123@";
     map<char,int> count;
     for(int i = 0 ; i < S.size() ; i++)

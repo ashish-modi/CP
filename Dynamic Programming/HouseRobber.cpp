@@ -4,7 +4,7 @@
 using namespace std;
 
 int fun(int N, vector<int> &arr, vector<int> &dp, int &flag)
-{
+{ 
     if(dp[N] == 0)
     {
         if( N == 0)
