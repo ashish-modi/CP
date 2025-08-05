@@ -1,5 +1,9 @@
 // Prim's Practice
 
+// Creates min heap
+// priority_queue<int, vector<int>, greater<int>> minHeap;      
+
+
 #include<bits/stdc++.h>
 
 using namespace std;
@@ -90,3 +94,79 @@ int main()
     cout << "SUM : " << min_sum << endl;
 
 }
+
+
+// Geeks for Geeks (Minimum Spanning Tree (Medium))
+
+// Given a weighted, undirected, and connected graph with V vertices and E edges,
+//  your task is to find the sum of the weights of the edges in the Minimum Spanning Tree (MST) 
+// of the graph. The graph is represented by an adjacency list, where each element adj[i] is a vector containing vector of integers.
+//  Each vector represents an edge, with the first integer denoting the endpoint of the edge and the second integer denoting the weight of the edge.
+
+// Input:
+// 3 3
+// 0 1 5
+// 1 2 3
+// 0 2 1
+
+class Solution {
+  public:
+    struct CompareByWeight {
+    bool operator()(const pair<int, int>& a, const pair<int, int>& b) {
+        return a.second > b.second; // min-heap by .second (weight)
+    }
+};
+    int spanningTree(int V, vector<vector<int>> adj[]) {
+        // code here
+        vector<int> visited (V,0);
+        int start = 0;
+        priority_queue<pair<int,int>, vector<pair<int,int>>, CompareByWeight> pq;
+        pq.push({0,0});
+        int cost =0;
+        while(!pq.empty()){
+            pair<int,int> it = pq.top();
+            int wt = it.second;
+            int node = it.first;
+            pq.pop();
+            // cout << " NODE : " << node << endl;
+            if(!visited[node]){
+                visited[node] = 1;
+                cost += wt;
+                vector<vector<int>> row = adj[node];
+                for(vector<int> pairs : row){
+                        pq.push({pairs[0],pairs[1]});
+                }
+            }
+            // auto temp = pq;
+
+            // while (!temp.empty()) {
+            //     pair<int,int> it = temp.top();
+            //     cout << it.first << " " << it.second << endl;
+            //     temp.pop();
+            // cout << " Visited : " << endl;
+            // for(auto it : visited)
+            //     cout << it << " ";
+            // cout << endl;
+            // }
+        }
+        return cost;
+    }
+};
+     
+     
+     
+     
+     
+     
+//         for (int i = 0; i < V; ++i) {
+//             cout << "adj[" << i << "]:" << endl;
+//             for (auto &vec : adj[i]) {
+//                 for (int val : vec) {
+//                     cout << val << " ";
+//                 }
+//                 cout << endl;
+//             }
+//         }
+//     }
+// };
+
