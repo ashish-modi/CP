@@ -1,0 +1,27 @@
+Always remember, for problems where you can move from one index to adjacent or specific forward/backward indices,
+ use BFS when all moves have equal (unit) cost, and Dijkstra’s Algorithm when the moves have variable (weighted) costs.
+
+
+Deque in python takes O(1) time: 
+Operation	    Time Complexity 	Description
+append(x)	    O(1)	            Add element to the right (back)
+appendleft(x)	O(1)	            Add element to the left (front)
+pop()	        O(1)	            Remove and return element from the right
+popleft()	    O(1)	            Remove and return element from the left
+
+
+Sort the list on the basis of second element in python
+
+arr = [[8,10,1], [1,3,2], [5,6,4]]
+
+# Sort based on the middle element (index 1)
+sorted_arr = sorted(arr, key=lambda x: x[1])
+
+Or use a comparator
+
+from functools import cmp_to_key
+def compare(a, b):
+    # Example: larger middle element comes first
+    return b[1] - a[1]
+
+sorted_coins = sorted(coins, key=cmp_to_key(compare))
