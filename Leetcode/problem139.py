@@ -1,21 +1,32 @@
+# Leetcode Problem: Word Break
+# Difficulty: Medium
+# Link: https://leetcode.com/problems/word-break/
+
 class Solution:
+    def breakable(self, s, dp, last_included, curr_index, length, dictionary):
+        n = s[last_included + 1: curr_index + 1]
+        if(curr_index == length -1):
+            return True if(dictionary.get(n,0)) else False
+        
+        if(dp[last_included][curr_index] != -1):
+            return dp[last_included][curr_index]
+        # include 
+        include = False
+        if(dictionary.get(n,0)):
+            include = self.breakable(s, dp, curr_index, curr_index + 1, length, dictionary)
+        # exclude
+        exclude = self.breakable(s, dp, last_included, curr_index + 1, length, dictionary)
+        dp[last_included][curr_index] = include or exclude
+        return dp[last_included][curr_index]
+
     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
         length = len(s)
-        max_length = max(map(len, wordDict))
-        answer = [False]*length
-        word = []
-        i=0
-        last_match = 0
-        while(i < length):
-            flag = 0
-            for j in range(min(i+max_length -1, length-1), i-1, -1):
-                if(s[i:j+1] in wordDict):
-                    word.append(s[i:j+1])
-                    i = j+1
-                    last_match = j+1
-                    flag = 1
-                    break
-            if(not flag):
-                i+=1
-                    
-        return last_match == length
+        dictionary = {}
+        for word in wordDict:
+            dictionary[word] = 1
+        dp = [[-1] *(length + 1) for _ in range(length+1)]
+        return self.breakable(s, dp, -1, 0, length, dictionary)
+    
+# Time Complexity: O(n^2)
+# Space Complexity: O(n^2)
+# Note: This is a recursive solution with memoization to determine if a string can be segmented into words from a given dictionary.
