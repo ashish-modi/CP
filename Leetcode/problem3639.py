@@ -24,7 +24,6 @@ class Solution:
             return self.binaryS(order, left, mid, length, k)
         else:
             return self.binaryS(order, mid + 1, right, length, k)
-        
 
 
     def minTime(self, s: str, order: List[int], k: int) -> int:

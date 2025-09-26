@@ -1,20 +1,24 @@
+# Leetcode Problem 787: Cheapest Flights Within K Stops
+# Difficulty: Medium
+# Link: https://leetcode.com/problems/cheapest-flights-within-k-stops/
+
+# Based on Bellman-Ford Algorithm 
+
 class Solution:
     def findCheapestPrice(self, n: int, flights: List[List[int]], src: int, dst: int, k: int) -> int:
         length = len(flights)
-        graph = [[] for _ in range(n)]
-        for i in range(length):
-            source, dst, price = flights[i]
-            graph[source].append((price, dst))
-        p = [] # heap
-        visited = [0]*n
         cost = [float('inf')]*n
-        heapq.heappush(p,(0,src))
+        temp = [float('inf')]*n
         cost[src] = 0
-        while(p):
-            price, source = heapq.heappop(p)
-            if(not visited[source]):
-                for wt, neigh in graph[source]:
-                    if(cost[neigh] > wt + price):
-                        cost[neigh] = wt + price
-                        heapq.heappush(p,(cost[neigh], neigh))
-        print("COST : ", cost)
+        temp[src] = 0
+        for i in range(k+1):
+            for j in range(length):
+                source, dest, price = flights[j]
+                if(cost[source] + price < temp[dest]):
+                    temp[dest] = cost[source] + price
+            for m in range(n):
+                cost[m] = temp[m]
+        return -1 if(cost[dst] == float('inf')) else cost[dst]
+
+# Time Complexity: O(k * E) where E is the number of flights
+# Space Complexity: O(V) where V is the number of vertices (cities) 
