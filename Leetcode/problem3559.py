@@ -1,8 +1,25 @@
+# Leetcode problem 3559: Number of Ways to Assign Edge Weights 2
+# Difficulty: Hard
+# URL : https://leetcode.com/problems/number-of-ways-to-assign-edge-weights-ii/
+
 class Solution:
     def assignEdgeWeights(self, edges: List[List[int]], queries: List[List[int]]) -> List[int]:
         length = len(edges)
-        length_q = len(queries)
+        n_nodes = length + 1
+
+        LOG = math.ceil(math.log2(n_nodes))   
+        visited = [0] * (n_nodes + 1)
         graph = {}
+        dp = [[0] * (n_nodes + 1) for _ in range(LOG + 1)]  
+        depth = [0] * (n_nodes + 1)
+        mod_val = 10**9 + 7
+        result = deque()
+
+        pow2 = [1] * (n_nodes + 1)
+        for i in range(1, n_nodes + 1):
+            pow2[i] = (pow2[i-1] * 2) % mod_val
+
+
         for edge in edges:
             if(graph.get(edge[0],0)):
                 graph[edge[0]].append(edge[1])
@@ -13,39 +30,55 @@ class Solution:
             else:
                 graph[edge[1]] = [edge[0]]
 
-        def bfs(start,end):
-            queue = deque()
-            queue.append(start)
-            visited = [0]*(length + 2)
-            visited[start] = level_elements = 1
-            new_element = levels = 0
-            if(start == end):
-                return 0
-            print("Visited start : ", visited)
-            while(queue):
-                element = queue.popleft()
-                print("Element : ", element)
-                level_elements -=1
-                for neigh in graph[element]:
-                    if(neigh == end):
-                        print("Levels : ", levels+1, "start : ", start)
-                        return levels +1
-                    if not visited[neigh]:
-                        visited[neigh] = 1
-                        queue.append(neigh)
-                        new_element +=1
-                if(level_elements == 0):
-                    levels +=1
-                    level_elements = new_element
-                    new_element = 0
-                print("Visited : ", visited)
-                
+        def dfs(node):
+            for neigh in graph[node]:
+                if(not visited[neigh]):
+                    visited[neigh] = True
+                    dp[0][neigh] = node
+                    depth[neigh] = depth[node] + 1
+                    dfs(neigh)
+        visited[1] = True
+        dfs(1)
+        for i in range(1,LOG):
+            for j in range(2,length+2):
+                dp[i][j] = dp[i-1][dp[i-1][j]]
         result = []
+        
+        def lift(node, k):
+            a = k
+            for i in range(LOG, -1,-1):
+                if( (1 << i) & k):
+                    node = dp[i][node]
+            return node
+        
+
         for query in queries:
-            start = query[0]
-            end = query[1]
-            levels = bfs(start, end)
-            print("query: ", query, "levels : ", levels)
-            ans = 2**(levels-1) if levels > 0 else 0
+            a = query[0]
+            b = query[1]
+            path_length = 0
+            
+            if(depth[a] > depth[b]):
+                path_length += depth[a] - depth[b]
+                a = lift(a, depth[a] - depth[b])
+            else:
+                path_length += depth[b] - depth[a]
+                b = lift(b, depth[b]-depth[a])
+            
+            if(a == b):
+                ans = pow2[path_length - 1] if path_length else 0
+                result.append(ans)
+                continue
+            
+            for i in range(LOG, -1,-1):
+                if(dp[i][a] != dp[i][b]):
+                    a = dp[i][a]
+                    b = dp[i][b]
+                
+            lca = dp[0][a]
+            path_length = depth[query[0]] + depth[query[1]] - 2*depth[lca]
+            ans = pow2[path_length - 1] if path_length else 0
             result.append(ans)
-        return result
+        return list(result)
+
+# Time complexity: O((N + Q) log N) where N is the number of nodes and Q is the number of queries
+# Space complexity: O(N log N) for the ancestor table and O(N) for the graph and other arrays   
