@@ -13,7 +13,8 @@ def monotonicStackApproach(self, nums: List[int]) -> int:
             right[index] = i        
         stack.append(i)
 
-# Explanation: This loop iterates through the array to find the next greater element for each element using a monotonic stack. If the current element is greater than the element at the index stored at the top of the stack, it pops the index from the stack and updates the `right` array with the current index.
+# Explanation: This loop iterates through the array to find the next greater element for each element using a monotonic stack. 
+# If the current element is greater than the element at the index stored at the top of the stack, it pops the index from the stack and updates the `right` array with the current index.
 
 # Time Complexity : O(N) where N is the number of elements in the input array.
 # Space Complexity : O(N) as we are using extra space for left and right arrays.
