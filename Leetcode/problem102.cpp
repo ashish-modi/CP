@@ -1,4 +1,6 @@
-// Problem : Binary Tree Level Order Traversal (Medium)
+// Leetcode Problem 102 : Binary Tree Level Order Traversal 
+// Difficulty: Medium
+// https://leetcode.com/problems/binary-tree-level-order-traversal/
 
 
 /**
@@ -62,3 +64,12 @@ public:
     return answer;
     }
 };
+
+// Time Complexity : O(N) where N is the number of nodes in the binary tree.
+// Space Complexity : O(W) where W is the maximum width of the binary tree (due to the queue).
+// Explanation:
+// 1. We use a queue to perform level order traversal of the binary tree.
+// 2. We start with the root node in the queue and iterate until there are no more nodes to process.
+// 3. For each level, we create a list of node values and a list of child nodes for the next level.
+// 4. We add the list of node values to the answer and update the queue with the child nodes.
+// 5. We continue this process until all levels have been processed.

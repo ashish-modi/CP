@@ -1,4 +1,4 @@
-# Problem : Edit Distance
+# Leetcode Problem 72: Edit Distance
 # Difficulty: Medium
 # Link: https://leetcode.com/problems/edit-distance/
 
@@ -32,3 +32,7 @@ class Solution:
 # Time Complexity: O(m * n)
 # Space Complexity: O(m * n)
 # Note: This is a recursive solution with memoization for calculating the minimum edit distance between two strings.    
+# Explanation:
+# 1. We define a helper function `minD` that takes the current indices of both words and calculates the minimum edit distance from that position to the end of both words.
+# 2. We use a 2D list `dp` to store the results of subproblems to avoid redundant calculations (memoization).
+# 3. The function explores four possible operations: insertion, deletion, update, and exclusion (if characters match), and recursively calculates the minimum edit distance for each operation.

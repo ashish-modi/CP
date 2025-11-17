@@ -1,4 +1,4 @@
-# Leetcode Problem: Decode Ways
+# Leetcode Problem 91: Decode Ways
 # Difficulty: Medium
 # Link: https://leetcode.com/problems/decode-ways/
 
@@ -29,3 +29,7 @@ class Solution:
 # Time Complexity: O(n^2)
 # Space Complexity: O(n^2)
 # Note: This is a recursive solution with memoization to count the number of ways to decode a string of digits into letters, where '1' maps to 'A', '2' to 'B', ..., and '26' to 'Z'.
+# Explanation:
+# 1. We define a helper function `count` that takes the current index and the last included index to calculate the number of ways to decode the substring from the current index to the end of the string.
+# 2. We use a 2D list `dp` to store the results of subproblems to avoid redundant calculations (memoization).
+# 3. The function explores two possibilities at each step: including the current digit as a separate letter or combining it with the previous digit to form a letter, and recursively calculates the number of ways for each possibility.

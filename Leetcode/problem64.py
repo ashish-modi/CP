@@ -1,4 +1,4 @@
-# Problem: Minimum Path Sum
+# Leetcode Problem 64: Minimum Path Sum
 # Difficulty: Medium
 # Link: https://leetcode.com/problems/minimum-path-sum/description/
 
@@ -32,3 +32,7 @@ class Solution:
 # Time Complexity: O(m * n)
 # Space Complexity: O(m * n)
 # Note: This is a recursive solution with memoization for calculating the minimum path sum in a grid.
+# Explanation:
+# 1. We define a helper function `minSum` that takes the current position (i, j) and calculates the minimum path sum from that position to the bottom-right corner of the grid.
+# 2. We use a 2D list `dp` to store the results of subproblems to avoid redundant calculations (memoization).
+# 3. The function explores two possible moves: moving right and moving down, and recursively calculates the minimum path sum for each move.

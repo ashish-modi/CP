@@ -17,3 +17,7 @@ class Solution:
     
 # Time Complexity : O(N) where N is the number of elements in the input array.
 # Space Complexity : O(1) as we are using only constant space.
+# Explanation:
+# 1. We maintain a variable 'maximum' to keep track of the farthest index we can reach at any point.
+# 2. We iterate through the array and update 'maximum' whenever we find a position that is reachable (i <= maximum).
+# 3. If at any point, the current index exceeds 'maximum', we return False as we cannot reach that position.

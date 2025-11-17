@@ -53,3 +53,7 @@ class Solution:
     
 # Time Complexity : O(N) where N is the number of intervals in the input array.
 # Space Complexity : O(N) as we are using extra space for the result array. 
+# Explanation:
+# 1. We iterate through the list of intervals and determine where to insert the new interval.
+# 2. We handle three cases: inserting the new interval before the current interval, merging overlapping intervals, and simply adding the current interval to the result.
+# 3. We use a while loop to merge overlapping intervals and update the result list accordingly.

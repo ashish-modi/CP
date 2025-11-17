@@ -1,4 +1,6 @@
-// Problem : Flatten binary tree into Linked list (Medium)
+// Leetcode Problem 114 : Flatten binary tree into Linked list
+// Difficulty: Medium
+// https://leetcode.com/problems/flatten-binary-tree-to-linked-list/
 
 /**
  * Definition for a binary tree node.
@@ -42,3 +44,13 @@ public:
         
     }
 };
+
+// Time Complexity : O(N) where N is the number of nodes in the binary tree.
+// Space Complexity : O(H) where H is the height of the binary tree (due to recursive stack).
+// Explanation:
+// 1. We define a recursive function `construct_tree` that flattens the binary tree.
+// 2. The base case checks if the current node is null; if so, we return null.
+// 3. We recursively flatten the left and right subtrees and obtain their tails.
+// 4. If the left subtree exists, we attach it to the right of the current node and connect the original right subtree to the tail of the left subtree.
+// 5. We return the tail of the flattened subtree, which is either the right tail, left tail, or the current node itself if both subtrees are null.
+// 6. The main function calls the `construct_tree` function to flatten the entire tree.

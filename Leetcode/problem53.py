@@ -1,4 +1,4 @@
-# Problem: Maximum Subarray
+# Leetcode Problem 53: Maximum Subarray
 # Difficulty: Medium
 # Link: https://leetcode.com/problems/maximum-subarray/
 
@@ -20,3 +20,7 @@ class Solution:
 # Time Complexity: O(n)
 # Space Complexity: O(1)
 # Note: This is Kadane's algorithm for finding the maximum subarray sum.
+# Explanation:
+# 1. We iterate through the array while maintaining a running sum of the current subarray.
+# 2. If the running sum becomes negative, we reset it to zero since starting a new subarray from the next element could yield a higher sum.
+# 3. We continuously update the maximum sum encountered during the iteration.

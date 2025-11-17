@@ -1,4 +1,6 @@
-// Problem : Same Tree (Easy)
+// Leetcode Problem 100 : Same Tree
+// Difficulty : Easy
+// Link : https://leetcode.com/problems/same-tree/
 
 
 /**
@@ -28,3 +30,12 @@ public:
             return false;
     }
 };
+
+// Time Complexity: O(min(m, n)) where m and n are the number of nodes in trees p and q respectively.
+// Space Complexity: O(min(h1, h2)) where h1 and h2 are the heights of trees p and q respectively due to the recursion stack in the worst case (skewed tree).
+// Note: This solution uses recursion to traverse both trees simultaneously and compare their structure and node values.
+// Explanation:
+// 1. We check if both nodes are null, in which case they are the same (return true).
+// 2. If one node is null and the other is not, they are different (return false).
+// 3. We recursively check the left and right subtrees of both nodes.
+// 4. Finally, we compare the values of the current nodes and the results of the left and right subtree comparisons to determine if the trees are the same.

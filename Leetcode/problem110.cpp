@@ -1,4 +1,6 @@
-// Problem : Balanced binary tree (Easy)
+// Leetcode Problem 110 : Balanced binary tree 
+// Difficulty: Easy
+// https://leetcode.com/problems/balanced-binary-tree/
 
 /**
  * Definition for a binary tree node.
@@ -49,3 +51,14 @@ public:
         return p.second;
     }
 };
+
+// Time Complexity : O(N) where N is the number of nodes in the binary tree.
+// Space Complexity : O(H) where H is the height of the binary tree (due to recursive stack).
+// Explanation:
+// 1. We define a helper function that returns a pair containing the height of the subtree and a boolean indicating whether the subtree is balanced.
+// 2. The base case checks if the current node is null; if so, we return a height of 0 and true for balanced.
+// 3. We recursively calculate the height and balance status of the left and right subtrees.
+// 4. We calculate the height of the current node as 1 plus the maximum height of the left and right subtrees.
+// 5. We check if the current subtree is balanced by ensuring the absolute difference in heights is at most 1 and both subtrees are balanced.
+// 6. Finally, we return the balance status of the entire tree from the main function.
+

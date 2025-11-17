@@ -24,3 +24,8 @@ class Solution:
     
 # Time Complexity : O(N) where N is the number of elements in the input array.
 # Space Complexity : O(1) as we are using only constant space.
+# Explanation:
+# 1. We maintain a variable 'maximum' to keep track of the farthest index we can reach at any point.
+# 2. We iterate through the array and update 'maximum' whenever we find a position that is reachable (i <= maximum).
+# 3. When we reach the end of the current maximum reach, we increment the jump count and update the maximum reach to the farthest we can reach from the current positions.
+# 4. We continue this process until we can reach or exceed the last index of the array.

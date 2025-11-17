@@ -1,4 +1,6 @@
-// Problem : Construct binary tree from preorder and inorder traversal (Medium)
+// Leetcode Problem 105: Construct binary tree from preorder and inorder traversal
+// Difficulty: Medium
+// https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/
 
 /**
  * Definition for a binary tree node.
@@ -36,3 +38,14 @@ public:
         return p.first;
     }
 };
+
+// Time Complexity : O(N) where N is the number of nodes in the binary tree.
+// Space Complexity : O(H) where H is the height of the binary tree (due to recursive stack) and O(N) for the hashmap.
+// Explanation:
+// 1. We create a hashmap to store the indices of the inorder traversal for quick access.
+// 2. We define a recursive function that takes the current range of inorder indices and the current root index in the preorder traversal.
+// 3. The base case checks if the start index is greater than the end index; if so, we return nullptr.
+// 4. We create a new TreeNode with the value from the preorder traversal at the current root index.
+// 5. We find the index of this value in the inorder traversal using the hashmap.
+// 6. We recursively build the left and right subtrees using the appropriate ranges of inorder indices and updated root indices from the preorder traversal.
+// 7. Finally, we return the constructed tree's root node.

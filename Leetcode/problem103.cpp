@@ -1,4 +1,6 @@
-// Problem : Binary Zig-Zag Level order traversal (Medium)
+// Leetcode Problem 103: Binary Zig-Zag Level order traversal
+// Difficulty: Medium
+// https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
 
 /**
  * Definition for a binary tree node.
@@ -78,3 +80,13 @@ public:
         return answer;
     }
 };
+
+// Time Complexity : O(N) where N is the number of nodes in the binary tree.
+// Space Complexity : O(W) where W is the maximum width of the binary tree (due to the queue).
+// Explanation:
+// 1. We use a queue to perform level order traversal of the binary tree.
+// 2. We maintain a counter to track the current level's order (left to right or right to left).
+// 3. For each level, we create a list of node values and a list of child nodes for the next level.
+// 4. Depending on the counter's parity, we add child nodes in the appropriate order.
+// 5. We add the list of node values to the answer and update the queue with the child nodes.
+// 6. We continue this process until all levels have been processed.
