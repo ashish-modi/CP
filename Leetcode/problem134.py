@@ -34,3 +34,10 @@ class Solution:
 
 # Time Complexity : O(N) where N is the number of gas stations.
 # Space Complexity : O(N) as we are using extra space for the res array.
+# Explanation:
+# 1. We initialize variables to keep track of the current index, count of iterations,
+#    starting index, and current gas in the tank.
+# 2. We use a while loop to simulate the process of traveling through the gas stations.
+# 3. For each gas station, we add the gas available and check if we can reach the next station.
+# 4. If we can reach the next station, we update the current gas and mark the station as reachable in the res array.
+# 5. If we cannot reach the next station, we reset the current gas and update the starting index to the next station.

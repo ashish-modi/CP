@@ -20,3 +20,10 @@ class Solution:
             
 # Time complexity : O(n)    
 # Space complexity : O(n)
+# Explanation:
+# 1. We use a stack to keep track of the temperatures and their indices.
+# 2. We iterate through the list of temperatures.
+# 3. For each temperature, we check if it is greater than the temperature at the top of the stack.
+# 4. If it is, we pop the stack and calculate the number of days until a warmer temperature for the popped index.
+# 5. We continue this process until the stack is empty or the current temperature is not greater than the top of the stack.
+# 6. Finally, we return the result list containing the number of days until a warmer temperature for each day.

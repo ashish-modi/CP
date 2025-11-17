@@ -69,3 +69,9 @@ class NumArray:
 
 # Time Complexity: O(log n) for update and sumRange operations
 # Space Complexity: O(n) for the segment tree storage   
+# Explanation:
+# 1. We build a segment tree from the input array, where each node represents the sum of a segment of the array.
+# 2. The buildTree function constructs the segment tree recursively.
+# 3. The updateTree function updates the value at a specific index and propagates the changes up the tree.
+# 4. The calculate_sum function computes the sum of elements in a given range by traversing the segment tree.
+# 5. The update and sumRange methods are the public interfaces for updating values and querying sums, respectively. 

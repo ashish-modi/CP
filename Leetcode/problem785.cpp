@@ -1,4 +1,6 @@
-// Problem : Is graph bipartite ? (medium)
+// Leetcode Problem 785 : Is graph bipartite ? 
+// Difficulty: Medium
+// https://leetcode.com/problems/is-graph-bipartite/
 
 
 class Solution {
@@ -44,3 +46,14 @@ public:
         return flag;
     }
 };
+
+// Time Complexity : O(V + E) where V is the number of vertices and E is the number of edges in the graph.
+// Space Complexity : O(V) for the colour and visited arrays.
+// Explanation:
+// 1. We define a BFS function that takes the graph, colour array, visited array, source node, and a flag as input.
+// 2. We initialize the colour of the source node to 1 and mark it as visited.
+// 3. We use a queue to perform BFS traversal of the graph.
+// 4. For each node, we check its neighbours. If a neighbour has the same colour as the current node, we set the flag to false and return.
+// 5. If a neighbour is not visited, we assign it the opposite colour and mark it as visited.
+// 6. In the main function, we iterate through all nodes and call the BFS function for unvisited nodes.
+// 7. If the flag is false at any point, we return false; otherwise, we return true indicating the graph is bipartite.

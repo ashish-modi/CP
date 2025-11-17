@@ -29,5 +29,9 @@ class Solution:
             # print("stack. :", stack)
         return stack.pop()
     
-# Time Complexity : O(N)
-# Space Complexity : O(N)
+# Time Complexity : O(N) where N is the number of tokens.
+# Space Complexity : O(N) where N is the number of tokens in the stack in the worst case.
+# Explanation:
+# 1. We initialize an empty stack to store operands.
+# 2. We iterate through each token in the input list.
+# 3. If the token is an operator (+, -, *, /), we pop the top two operands from the stack, perform the operation, and push the result back onto the stack.

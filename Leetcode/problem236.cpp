@@ -1,4 +1,6 @@
-// Problem 236 : Lowest common ancestor of a binary tree (Medium)
+// Problem 236 : Lowest common ancestor of a binary tree
+// Difficulty: Medium
+// https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
 
 /**
  * Definition for a binary tree node.
@@ -50,3 +52,16 @@ public:
         return res.result;
     }
 };
+
+// Time Complexity : O(N) where N is the number of nodes in the binary tree.
+// Space Complexity : O(H) where H is the height of the binary tree (due to recursive stack).
+// Explanation:
+// 1. We define a helper struct `LCAresult` to store whether we have found nodes p and q, and the result node if found.
+// 2. We define a recursive function `lca` that traverses the binary tree.
+// 3. The base case checks if the current node is null; if so, we return false for both p and q found, and null for the result.
+// 4. We check if the current node matches either p or q and update the corresponding boolean flags.
+// 5. We recursively call `lca` on the left and right subtrees.
+// 6. If either subtree returns a non-null result, we propagate that result up the recursion stack.
+// 7. We update the boolean flags for p and q found based on the results from the left and right subtrees.
+// 8. If both p and q are found at the current node, we return the current node as the result.
+// 9. Finally, we return the result from the main function `lowestCommonAncestor`.

@@ -1,4 +1,4 @@
-# Leetcode Problem : Redundant Connection
+# Leetcode Problem 684: Redundant Connection
 # Difficulty : Medium
 # Link : https://leetcode.com/problems/redundant-connection/
 # Based on Union Find Algorithm
@@ -24,3 +24,8 @@ class Solution:
 
 # Time Complexity : O(N * α(N)) where α is the Inverse Ackermann function.
 # Space Complexity : O(N) for the parent array. 
+# Explanation:
+# 1. We initialize a parent array where each node is its own parent.
+# 2. We define a helper function `find_parent` to find the root parent of a node using path compression.
+# 3. We iterate through each edge in the input list.
+# 4. For each edge, we find the root parents of both nodes.

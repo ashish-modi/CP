@@ -1,4 +1,4 @@
-# Leetcode Problem: Word Break
+# Leetcode Problem 139: Word Break
 # Difficulty: Medium
 # Link: https://leetcode.com/problems/word-break/
 
@@ -30,3 +30,6 @@ class Solution:
 # Time Complexity: O(n^2)
 # Space Complexity: O(n^2)
 # Note: This is a recursive solution with memoization to determine if a string can be segmented into words from a given dictionary.
+# Explanation:
+# 1. We define a recursive function `breakable` that checks if the substring from the last included index to the current index can form valid words.
+# 2. The base case checks if we have reached the end of the string and whether the last substring is in the dictionary.

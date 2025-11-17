@@ -48,3 +48,8 @@ class Solution:
 
 # Time Complexity: O(m*n)
 # Space Complexity: O(m*n) 
+# Explanation:
+# 1. We perform two separate DFS traversals: one for the Pacific Ocean and one for the Atlantic Ocean.
+# 2. We start the DFS from the cells adjacent to each ocean and mark the reachable cells in a visited matrix.
+# 3. After both DFS traversals, we check which cells are reachable from both oceans by checking the visited matrices.
+# 4. We collect the coordinates of these cells and return them as the result.

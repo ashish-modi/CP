@@ -43,3 +43,8 @@ class Solution:
     
 # Time Complexity: O(m*n)
 # Space Complexity: O(m*n)  
+# Explanation:
+# 1. We first count the number of fresh oranges and add the positions of all rotten oranges to a queue.
+# 2. We then perform a breadth-first search (BFS) to rot the adjacent fresh oranges level by level.
+# 3. For each level of BFS, we increment the levels counter.
+# 4. Finally, if there are still fresh oranges left, we return -1; otherwise, we return the number of levels (minutes) taken to rot all oranges.

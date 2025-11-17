@@ -1,4 +1,6 @@
-// Problem : Longest common subsequence (Medium)
+// Leetcode Problem 1143: Longest common subsequence
+// Difficulty: Medium
+// https://leetcode.com/problems/longest-common-subsequence/
 
 class Solution {
 public:
@@ -34,3 +36,13 @@ public:
         return dp[length1][length2];
     }
 };
+
+// Time Complexity : O(M*N) where M and N are the lengths of text1 and text2 respectively.
+// Space Complexity : O(M*N) for the dp array.
+// Explanation:
+// 1. We define a recursive function `lcs` that takes the two strings, their current indices, and a dp array for memoization.
+// 2. The base case checks if either index is 0; if so, we return 0.
+// 3. If the characters at the current indices match, we add 1 to the result of the recursive call with both indices decremented.
+// 4. If the characters do not match, we take the maximum of the results from two recursive calls: one with the first index decremented and the other with the second index decremented.
+// 5. We store the results in the dp array to avoid redundant calculations.
+// 6. The main function initializes the dp array and calls the `lcs` function with the lengths of the two strings.

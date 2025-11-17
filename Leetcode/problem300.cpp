@@ -1,4 +1,6 @@
-// Problem : Longest Increasing subsequence (Medium)
+// Leetcode Problem 300 : Longest Increasing subsequence 
+// Difficulty: Medium
+// https://leetcode.com/problems/longest-increasing-subsequence/
 
 
 class Solution {
@@ -33,3 +35,13 @@ public:
         // }
     }
 };
+
+// Time Complexity : O(N^2) where N is the number of elements in the input array.
+// Space Complexity : O(N^2) for the dp array.
+// Explanation:
+// 1. We define a recursive function LIS that takes the current index, the last included index, and a dp array for memoization.
+// 2. The base case checks if the current index is greater than or equal to the size of the input array; if so, we return 0.
+// 3. We check if the result for the current index and last included index is already computed in the dp array; if so, we return that value.
+// 4. We calculate the length of the longest increasing subsequence by either including or excluding the current element.
+// 5. We store the maximum of the two options in the dp array and return it.
+// 6. The main function initializes the dp array and calls the LIS function starting from index 0 and last included index

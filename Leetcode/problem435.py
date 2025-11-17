@@ -24,3 +24,8 @@ class Solution:
     
 # Time Complexity : O(N log N) where N is the number of intervals in the input array.
 # Space Complexity : O(1) as we are using only constant space.
+# Explanation:
+# 1. We sort the intervals based on their starting points.
+# 2. We perform two passes through the sorted intervals: one from left to right and another from right to left.
+# 3. In the left-to-right pass, we count the number of overlapping intervals by comparing the start of the current interval with the end of the previous non-overlapping interval.
+# 4. In the right-to-left pass, we count the number of overlapping intervals by comparing the end of the current interval with the start of the next non-overlapping interval.

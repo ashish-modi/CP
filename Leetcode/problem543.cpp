@@ -1,4 +1,6 @@
-// Problem : Diameter of Binary Tree (Easy)
+// Leetcode Problem 543: Diameter of Binary Tree (Easy)
+// Difficulty: Easy
+// https://leetcode.com/problems/diameter-of-binary-tree/
 
 /**
  * Definition for a binary tree node.
@@ -41,3 +43,14 @@ int diameterOfBinaryTree(TreeNode* root) {
     return diameter;
 }
 };
+
+// Time Complexity : O(N) where N is the number of nodes in the binary tree.
+// Space Complexity : O(H) where H is the height of the binary tree (due to recursive stack).
+// Explanation:
+// 1. We define a helper function `height` that returns a pair containing the height of the subtree and the maximum diameter found in that subtree.
+// 2. The base case checks if the current node is null; if so, we return a height of 0 and diameter of 0.
+// 3. We recursively calculate the height and diameter of the left and right subtrees.
+// 4. The height of the current node is 1 plus the maximum height of its left and right subtrees.
+// 5. The diameter at the current node is the sum of the heights of the left and right subtrees.
+// 6. We return the maximum diameter found in the subtree.
+// 7. The main function calls the `height` function and returns the diameter.

@@ -1,4 +1,4 @@
-# Leetcode Problem: Best Time to Buy and Sell Stock with Cooldown
+# Leetcode Problem 309: Best Time to Buy and Sell Stock with Cooldown
 # Difficulty: Medium
 # Link: https://leetcode.com/problems/best-time-to-buy-and-sell-stock-with-cooldown/
 

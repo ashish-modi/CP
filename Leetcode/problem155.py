@@ -39,3 +39,5 @@ class MinStack:
 
 # Time Complexity: O(1) for all operations
 # Space Complexity: O(n) for storing elements in the stack and minimum stack
+# Explanation:
+# 1. We maintain two stacks: one for the actual stack elements and another for tracking

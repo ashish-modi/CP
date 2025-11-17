@@ -22,4 +22,9 @@ class Solution:
         return list(result)
     
 # Time Complexity : O(N log k) where N is the number of elements in the array
-# Space Complexity : O(N) for the dictionary and heap   
+# Space Complexity : O(N) for the dictionary and heap  
+# Explanation:
+# 1. We use a dictionary to count the frequency of each element in the input array.
+# 2. We then use a min-heap to keep track of the top k frequent elements.
+# 3. We push the negative frequency and the element into the heap to simulate a max-heap.
+# 4. Finally, we pop the top k elements from the heap and return them as the result. 

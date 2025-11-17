@@ -42,3 +42,10 @@ class Solution:
 
 # Time Complexity: O(V + E) where V is number of vertices and E is number of edges
 # Space Complexity: O(V + E) for storing the graph and visited array    
+# Explanation:
+# 1. We build a directed graph from the prerequisites list.
+# 2. We use Depth First Search (DFS) to detect cycles in the graph and build the course order.
+# 3. We maintain a visited array to keep track of nodes in the current DFS path.
+# 4. If we encounter a node that is already visited in the current path, it indicates a cycle, and we return an empty list.
+# 5. If we can traverse all nodes without encountering a cycle, we append the nodes to the answer list in post-order.
+# 6. Finally, we return the course order, appending any courses that were not part of the prerequisites.

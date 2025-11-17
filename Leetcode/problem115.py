@@ -1,4 +1,4 @@
-# Leetcode Problem: Distinct Subsequences
+# Leetcode Problem 115: Distinct Subsequences
 # Difficulty: Hard
 # Link: https://leetcode.com/problems/distinct-subsequences/description/
 

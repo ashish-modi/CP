@@ -1,4 +1,4 @@
-# Leetcode Problem: Longest Increasing Path in a Matrix 
+# Leetcode Problem 329: Longest Increasing Path in a Matrix 
 # Difficulty: Hard
 # Link: https://leetcode.com/problems/longest-increasing-path-in-a-matrix/
 

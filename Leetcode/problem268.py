@@ -11,10 +11,11 @@ class Solution:
             val ^= i^nums[i]
         return val
     
+
+# Time Complexity : O(N) where N is the number of elements in the input array.
+# Space Complexity : O(1) as we are using only constant space.
+
 # Explanation:
 # We use the property of XOR where a^a = 0 and a^0 = a.
 # We initialize the result with n (length of array) and then XOR it with all indices and all numbers in the array. 
 # The numbers that are present in the array will cancel out with their corresponding indices, leaving us with the missing number.
-# 
-# Time Complexity : O(N) where N is the number of elements in the input array.
-# Space Complexity : O(1) as we are using only constant space.

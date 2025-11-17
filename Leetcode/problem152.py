@@ -1,17 +1,31 @@
+# Leetcode Problem 152: Maximum Product Subarray
+# Difficulty : Medium
+# Link : https://leetcode.com/problems/maximum-product-subarray/
+# Based on Two Pass Approach
+
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:
         length = len(nums)
-        pre_prod = [1]*(length+1)
-        for i in range(1,length+1):
-            pre_prod[i] = pre_prod[i-1] * nums[i-1]
-        # print("PRE prod : ", pre_prod)
-        dp = [[1]*length for _ in range(length)]
-        maximum = 0
+        maximum = -float('inf')
+        prod = 1
         for i in range(length):
-            for j in range(i, length):
-                dp[i][j] = pre_prod[j+1] // (pre_prod[i] if pre_prod[i] else 1)
-                maximum = max(dp[i][j], maximum)
-                    
-        # for row in dp:
-        #     print(row)
+            prod *= nums[i]
+            maximum = max(prod, maximum)
+            if(prod == 0):
+                prod = 1
+        prod = 1
+        for i in range(1,length+1):
+            prod *= nums[-i]
+            maximum = max(prod, maximum)
+            if(prod == 0):
+                prod = 1
         return maximum
+    
+# Time Complexity : O(N) where N is the number of elements in the input array.
+# Space Complexity : O(1) as we are using only constant space.
+# Explanation:
+# 1. We perform two passes through the array: one from left to right and another from right to left.
+# 2. In each pass, we maintain a running product of the elements.
+# 3. We update the maximum product found so far during each iteration.
+# 4. If the running product becomes zero, we reset it to one to start a new product calculation.
+# 5. Finally, we return the maximum product found during both passes.

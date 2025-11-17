@@ -30,3 +30,9 @@ class Solution:
 # Space Complexity: O(n * total) for the dp array
 # Note: The code uses recursion with memoization to efficiently check if the array can be partitioned into two subsets with equal sum.
 # The function returns True if such a partition exists, otherwise returns False.
+# Explanation:
+# 1. We define a recursive function `partition` that takes the current index, current sum, and total sum as parameters.
+# 2. The base cases check if the current sum exceeds the total or if we have reached the end of the array without achieving the target sum.
+# 3. We use a dp array to store intermediate results to avoid redundant calculations.
+# 4. We explore both including and excluding the current element in the subset.
+# 5. The main function initializes the dp array and calls the partition function starting from index 0 and current sum 0

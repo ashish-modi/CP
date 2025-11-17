@@ -49,3 +49,6 @@ class Solution:
         
 # Time Complexity: O(M*N) where M is number of rows and N is number of columns
 # Space Complexity: O(M*N) for visited array in worst case all cells are 'O'
+# Note: The solution uses Depth First Search (DFS) to traverse the board and mark all 'O's that are connected to the border.
+# It starts DFS from all 'O's on the borders and marks them as visited.
+# After the DFS traversal, it iterates through the entire board and converts all unvisited 'O's to 'X's, effectively capturing the surrounded regions.

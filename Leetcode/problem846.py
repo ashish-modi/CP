@@ -47,3 +47,8 @@ class Solution:
 
 # Time Complexity : O(N log N) where N is the number of elements in the input array.
 # Space Complexity : O(N) as we are using extra space for the dictionary and sorted list.   
+# Explanation:
+# 1. We create a dictionary to count the occurrences of each card in the hand.
+# 2. We sort the unique cards to process them in order.
+# 3. We iterate through the sorted cards and for each card, we try to form a group of consecutive cards of size `groupSize`.
+# 4. If we can successfully form groups for all cards, we return True; otherwise, we return False.

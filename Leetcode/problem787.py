@@ -22,3 +22,9 @@ class Solution:
 
 # Time Complexity: O(k * E) where E is the number of flights
 # Space Complexity: O(V) where V is the number of vertices (cities) 
+# Explanation:
+# 1. We initialize a cost array to keep track of the minimum cost to reach each city.
+# 2. We perform k+1 iterations to allow for up to k stops.
+# 3. In each iteration, we go through all the flights and update the cost to reach the destination city if a cheaper cost is found.
+# 4. We use a temporary array to store the updated costs for the current iteration.
+# 5. After k+1 iterations, we check the cost to reach the destination city. If it is still infinity, we return -1, otherwise we return the cost.
