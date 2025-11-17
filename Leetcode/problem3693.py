@@ -19,3 +19,7 @@ class Solution:
     
 # Time Complexity : O(N) where N is the number of elements in the input array.
 # Space Complexity : O(N) where N is the number of elements in the input array as we are using a dp array of size N.
+# Explaination :
+# The function climbStairs takes an integer n and a list of integers cost as input and returns the minimum cost to reach the top of the stairs.
+# It uses dynamic programming to calculate the minimum cost to reach each step, considering the cost of stepping on each stair and the number of steps taken to reach that stair.
+# Finally, it returns the minimum cost to reach the top of the stairs.

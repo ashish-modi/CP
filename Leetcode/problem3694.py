@@ -37,3 +37,8 @@ class Solution:
     
 # Time Complexity : O(N) where N is the number of characters in the input string.
 # Space Complexity : O(N) in the worst case, where all points are distinct.
+# Explaination :
+# The function distinctPoints takes a string s and an integer k as input and returns the number of distinct points reachable after removing a substring of length k from s.
+# It uses prefix sums to keep track of the counts of each direction (U, D, L, R) at each position in the string.
+# Then, for each possible substring of length k, it calculates the resulting position after removing that substring and adds it to a set to ensure uniqueness.
+# Finally, it returns the size of the set, which represents the number of distinct points reachable.

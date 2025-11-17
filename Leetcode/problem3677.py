@@ -37,3 +37,7 @@ class Solution:
 
 # Time Complexity : O(log^2 N) where N is the input number.
 # Space Complexity : O(1) as we are using only constant space.
+# Explaination :
+# The function countBinaryPalindromes counts the number of binary palindromic numbers less than or equal to a given integer n.
+# It first determines the length of the binary representation of n.
+# Then, for each possible length of binary palindromes from 1 to the length of n, it calculates the number of valid palindromic numbers using a binary search approach.

@@ -33,3 +33,7 @@ class Solution:
 # The sorting takes O(n log n) and the binary search takes O(log n) for each element, leading to an overall complexity of O(n log n).
 # Space complexity: O(n) for the sorted list.
 # The space complexity is O(n) due to the storage of the sorted list.
+# Explaination:
+# The solution involves sorting the array and then using binary search to find the minimum number of removals needed to balance the array.
+# For each element in the sorted array, we calculate how many elements need to be removed to ensure that no element is more than k times another element.
+# We keep track of the minimum removals required and return that value at the end.

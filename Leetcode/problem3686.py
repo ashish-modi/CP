@@ -23,3 +23,8 @@ class Solution:
     
 # Time complexity: O(n)
 # Space complexity: O(1)
+# Explaination:
+# The function countStableSubsequences counts the number of stable subsequences in the given list of integers nums.
+# A stable subsequence is defined as a subsequence where the count of odd and even numbers are both even or both odd.
+# The function iterates through the list and maintains counts of subsequences with different parity combinations using four variables: one_odd, two_odd, one_even, and two_even.
+# Finally, it returns the total count of stable subsequences modulo 10^9 + 7.

@@ -62,3 +62,8 @@ class ExamTracker:
 
 # Time Complexity: O(log n) for totalScore, O(1) for record
 # Space Complexity: O(n)
+# Explaination:
+# The ExamTracker class is designed to track exam scores recorded at different times.
+# The record method stores the time and score of each exam in arrays and maintains a prefix sum array for efficient score calculation.
+# The totalScore method uses binary search to find the indices corresponding to the given startTime and endTime, and then calculates the total score in that time range using the prefix sum array.
+# This allows for efficient querying of total scores over specified time intervals.

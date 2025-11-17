@@ -38,4 +38,8 @@ class Solution:
 # The loop iterates through the list once, making it O(n).
 # Space complexity: O(1)
 # No additional space is used that scales with input size.
-# The flags and counters are constant space.   
+# The flags and counters are constant space.  
+# Explaination:
+# The solution checks for a trionic array by maintaining flags to track the increasing and decreasing sequences.
+# It ensures that the array first strictly increases, then strictly decreases, and finally strictly increases again.
+# If any of these conditions are violated, it returns False. If the entire array is traversed without violations, it returns True. 

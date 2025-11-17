@@ -31,4 +31,6 @@ class Solution:
 
 # Time Complexity: O(n*k)
 # Space Complexity: O(k)
-# where n is the length of nums and k is the given integer k.   
+# where n is the length of nums and k is the given integer k.  
+# Explaination:
+# The function subsequenceSumAfterCapping determines for each integer from 1 to n (where n is the length of nums) whether there exists a subsequence of nums such that the sum of the subsequence, after capping each element at the current integer, is equal to k. 

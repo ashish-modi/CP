@@ -1,4 +1,4 @@
-# Leetcode problem : Minimum operations to transform string
+# Leetcode problem 3675: Minimum operations to transform string
 # Difficulty : Medium
 # Link : https://leetcode.com/problems/minimum-operations-to-transform-string/
 
@@ -15,3 +15,7 @@ class Solution:
     
 # Time complexity : O(n)
 # Space complexity : O(1)
+# Explanation :
+# We iterate through the string and for each character, we calculate the number of operations needed to transform it to 'a'.
+# The number of operations needed is given by 123 - ASCII value of the character.
+# We keep track of the maximum number of operations needed among all characters and return it as the result.

@@ -1,4 +1,4 @@
-# Leetcode problem : Majority Frequency characters
+# Leetcode problem 3692: Majority Frequency characters
 # Difficulty : easy
 # Link : https://leetcode.com/problems/majority-frequency-characters/
 
@@ -35,3 +35,8 @@ class Solution:
 
 # Time Complexity : O(N) where N is the number of characters in the input string.
 # Space Complexity : O(1) as we are using only constant space.
+# Explaination :
+# The function majorityFrequencyGroup takes a string s as input and returns a string containing the characters that have the highest frequency in the input string.
+# It first counts the frequency of each character using a dictionary.
+# Then, it groups the characters by their frequencies and keeps track of the maximum frequency group.
+# Finally, it returns the characters from the group with the highest frequency.
