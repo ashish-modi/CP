@@ -35,4 +35,8 @@ class Solution:
     
 # Time Complexity: O(n)
 # Space Complexity: O(1)
-# where n is the length of the input array nums 
+# Explanation: 
+# We first convert the numbers into their parity (0 for even, 1 for odd).
+# We then count the total number of even and odd numbers.
+# Next, we try to build the longest alternating subsequence starting with both 0 and 1.
+# Finally, we return the maximum length found among the counts and the alternating subsequences.

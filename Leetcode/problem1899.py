@@ -30,3 +30,4 @@ class Solution:
 
 # Time Complexity : O(N) where N is the number of triplets in the input array.
 # Space Complexity : O(1) as we are using constant space.
+# Explanation : Iterate through each triplet and check if it can contribute to forming the target triplet by comparing each element with the target.

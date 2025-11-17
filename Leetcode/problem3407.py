@@ -1,4 +1,6 @@
-# Problem : Substring Matching pattern (Easy)
+# Leetcode Problem 3407: Substring Matching pattern
+# Difficulty: Easy
+# Link : https://leetcode.com/problems/substring-matching-pattern/
 
 class Solution:
     def createarray(self,string):
@@ -63,3 +65,10 @@ class Solution:
         
         
                     
+# Time Complexity: O(N + M) where N is the length of string s and M is the length of pattern p.
+# Space Complexity: O(M) for the array used in KMP algorithm.
+# Explanation: 
+# We first create the KMP array for both the left and right parts of the pattern (before and after the '*').
+# We then use the KMP string matching algorithm to find the left part in the string s.
+# After finding the left part, we continue from the end index to find the right part in the string s.
+# If both parts are found, we return True, otherwise we return False.

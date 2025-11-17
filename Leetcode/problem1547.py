@@ -1,4 +1,4 @@
-# Problem: Minimum Cost to Cut a Stick
+# Leetcode Problem 1547: Minimum Cost to Cut a Stick
 # Difficulty: Hard
 # Link: https://leetcode.com/problems/minimum-cost-to-cut-a-stick/description/ 
 
@@ -31,3 +31,10 @@ class Solution:
 # Time Complexity: O(m^3)
 # Space Complexity: O(m^2)
 # Note: This is a recursive solution with memoization for calculating the minimum cost to cut a stick.    
+# Explanation:
+# 1. The function minC computes the minimum cost to cut the stick between indices left and right in the cuts array.
+# 2. If there are no cuts to be made (i.e., right - left <= 1), the cost is 0.
+# 3. If the result for the current left and right indices is already computed (i.e., dp[left][right] != -1), it returns the stored result.
+# 4. It iterates through all possible cuts between left and right, recursively calculating the cost of making each cut and updating the minimum cost.
+# 5. The minCost function initializes the cuts array by adding the two ends of the stick (0 and n) and sorts the cuts.
+# 6. It initializes a dp table for memoization and calls the minC function to get the final result.

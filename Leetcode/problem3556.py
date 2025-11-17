@@ -34,3 +34,8 @@ class Solution:
 
 # Time complexity: O(n^3) where n is the length of the string s
 # Space complexity: O(m) where m is the number of distinct substrings of s  
+# Explanation:
+# The function calculates the sum of the three largest prime numbers that can be formed
+# from substrings of the input string s. It generates all possible substrings, checks if
+# they are prime using the is_prime helper function, and stores them in a dictionary to
+# avoid duplicates. Finally, it sorts the list of prime numbers and sums the top three.

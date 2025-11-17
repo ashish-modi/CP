@@ -47,4 +47,11 @@ class Solution:
             dp[last_included_index][mod] = max(include, exclude)
             return dp[last_included_index][mod]
         return validSubs(-1, 0, -1)
+    
+# Time Complexity: O(N^2 * K) where N is the number of elements in the input array and K is the given integer.
+# Space Complexity: O(N*K) for the dp array used for memoization.
+# Explanation: We use a recursive function with memoization to explore all possible subsequences.
+# The function validSubs takes the last included index, current index, and current mod value as parameters.
+# We have two choices at each step: include the current element in the subsequence if it maintains the mod condition, or exclude it.
+# We store the results in a dp array to avoid redundant calculations.
  

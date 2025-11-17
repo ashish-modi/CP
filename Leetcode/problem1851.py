@@ -24,3 +24,4 @@ class Solution:
 
 # Time Complexity : O(N log N + Q log Q) where N is the number of intervals and Q is the number of queries.
 # Space Complexity : O(N) as we are using extra space for the min-heap.
+# Explanation : Sort intervals and queries. Use a min-heap to keep track of the smallest interval that includes the current query.

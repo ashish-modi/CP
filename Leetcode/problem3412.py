@@ -25,3 +25,9 @@ class Solution:
 # if(dictionary[rev]): O(1) (check if deque is non-empty)
 # dictionary[rev].popleft(): O(1)
 # dictionary[ascii].appendleft(i): O(1)
+
+# Explanation:
+# The function calculates the "mirror score" of a string by using a dictionary of deques
+# to track the indices of characters. For each character, it computes its "mirror" character
+# and checks if there are any unmatched occurrences of that mirror character. If found, it
+# calculates the score based on the distance between the current index and the matched index.

@@ -1,4 +1,6 @@
-# Problem : Maximum Erasure value (medium)
+# Leetcode Problem 1695 : Maximum Erasure value 
+# Difficulty : Medium
+# Link : https://leetcode.com/problems/maximum-erasure-value/
 
 class Solution:
     def maximumUniqueSubarray(self, nums: List[int]) -> int:
@@ -27,3 +29,6 @@ class Solution:
         maximum = max(curr, maximum)
         return maximum
             
+# Time Complexity : O(N)
+# Space Complexity : O(N)
+# Explanation : Used sliding window approach with help of prefix sum array and dictionary to store last seen index of element.  

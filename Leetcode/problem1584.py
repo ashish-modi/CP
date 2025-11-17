@@ -1,4 +1,4 @@
-# Leetcode Problem : Min Cost to Connect All Points
+# Leetcode Problem 1584: Min Cost to Connect All Points
 # Difficulty Level : Medium
 # Link : https://leetcode.com/problems/min-cost-to-connect-all-points/
 
@@ -41,5 +41,9 @@ class Solution:
         
 # Time Complexity : O(E log E) where E is number of edges
 # Space Complexity : O(E) where E is number of edges    
-
+# Explanation:
+# 1. We create a list of all edges with their corresponding Manhattan distances.
+# 2. We use a priority queue (min-heap) to always expand the least costly edge.
+# 3. We use the Union-Find data structure to keep track of connected components and avoid cycles.
+# 4. We continue adding edges until we have connected all points (length - 1 edges).
         

@@ -10,3 +10,63 @@
 
 
 # Problem : Minimum jumps to reach end via prime teleportation (medium)
+
+class Solution:
+    def bfs(self, start, primes, nums, length):
+        q = []
+        q.append([start])
+        visited = [0]*length
+        visited[start]= 1
+        q_index = 0
+        elements = 1
+        while(True):
+            node = q[q_index]
+            new_nodes = []
+            ele = 0
+            flag = 0
+            for i in range(elements):
+                curr_index = node[i]
+                if(curr_index == length -1):
+                    return q_index
+                if(curr_index -1 >= 0 and not visited[curr_index -1]):  # adjacent step
+                    new_nodes.append(curr_index-1)
+                    ele +=1
+                    flag = 1
+                    visited[curr_index-1] = 1
+                if(primes[nums[curr_index]]):
+                    for j in range(length):
+                        if(curr_index != j and not visited[j] and nums[j] % nums[curr_index] == 0):   # prime element
+                            new_nodes.append(j)
+                            ele+=1
+                            flag = 1
+                            visited[j] = 1
+                if(curr_index + 1 < length and not visited[curr_index + 1]):  # adjacent step
+                    new_nodes.append(curr_index + 1)
+                    ele+=1
+                    flag = 1
+                    visited[curr_index + 1] = 1
+
+            elements = ele
+            if(flag):
+                q_index +=1
+                q.append(new_nodes)
+
+    def primes(n):
+        primes = [True]*(n+1)
+        primes[0] = primes[1] = False
+        for i in range(2,int(sqrt(n))+1):
+            t = i+i
+            if(primes[i]):
+                while(t < (n+1)):
+                    primes[t] = False
+                    t+=i
+        return primes
+        
+    
+    def minJumps(self, nums: List[int]) -> int:
+        length= len(nums)
+        return self.bfs(0, primes_list, nums, length)
+
+primes_list = Solution.primes(1000000)
+
+                

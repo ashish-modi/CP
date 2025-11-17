@@ -61,3 +61,7 @@ class Solution:
 # The space complexity is O(n) due to the storage of the prefix sum array.
 # The overall complexity is O(n log n) due to the sorting step.
 # The two-pointer traversal is linear, O(n), but the sorting dominates the time complexity.
+# Explanation:
+# The function calculates the maximum coins that can be collected from k consecutive bags.
+# It uses a two-pointer technique to find valid intervals of bags that fit within the size k.
+# The prefix sum array is used to efficiently calculate the total coins in the selected intervals.

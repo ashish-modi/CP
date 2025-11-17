@@ -82,3 +82,8 @@ class Solution:
 
 # Time complexity: O((N + Q) log N) where N is the number of nodes and Q is the number of queries
 # Space complexity: O(N log N) for the ancestor table and O(N) for the graph and other arrays   
+# Explanation:
+# The function calculates the number of ways to assign edge weights for given queries on a tree.
+# It uses Depth-First Search (DFS) to compute the depth of each node and an ancestor table for efficient
+# Lowest Common Ancestor (LCA) queries. For each query, it calculates the path length between two nodes
+# and computes the number of ways to assign edge weights based on the path length.

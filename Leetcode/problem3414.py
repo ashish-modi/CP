@@ -43,3 +43,13 @@ class Solution:
             res.append(dictionary[tuple(intervals[val])] -1 )
         # print("res: ", res)
         return sorted(res)
+    
+# Time complexity: O(n^2)
+# The function uses memoization to store results of subproblems in a 2D array dp of size n x n,
+# where n is the number of intervals. Each state is computed only once, leading to a time complexity of O(n^2).
+# Space complexity: O(n^2) for the dp array and O(n) for the recursion stack.
+# The overall space complexity is O(n^2).
+# Explanation:
+# The function calculates the maximum score of non-overlapping intervals using a recursive approach with memoization.
+# It explores two options for each interval: including it in the score if it does not overlap with the last included interval,
+# or excluding it. The results of subproblems are stored in a 2D array to avoid redundant calculations.

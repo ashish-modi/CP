@@ -46,4 +46,12 @@ class Solution:
                 max_total = total + gain
         # print("Max total : ", max_total)
         return max_total
-        
+
+# Time Complexity: O(N)
+# Space Complexity: O(N)
+# Explanation:
+# We traverse the string from left to right to count the number of L's and LC subsequences up to each index.
+# Then, we traverse the string from right to left to count the number of T's and CT subsequences from each index to the end.
+# We calculate the base number of "LCT" subsequences in the original string.
+# Finally, we evaluate the potential gain in "LCT" subsequences by inserting 'L', 'C', or 'T' at each position and keep track of the maximum possible total.
+# The final result is the maximum number of "LCT" subsequences achievable with one insertion.

@@ -44,3 +44,7 @@ class Solution:
 
 # Time complexity: O(n) where n is the number of edges
 # Space complexity: O(n) for the graph and queue
+# Explanation:
+# The function assigns edge weights to make the path length even by performing a BFS traversal
+# of the graph. It counts the number of levels in the BFS tree and calculates the result
+# as 2 raised to the power of (levels - 1), modulo 10^9 + 7. The BFS ensures that all nodes are visited level by level.

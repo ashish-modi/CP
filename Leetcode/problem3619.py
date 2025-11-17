@@ -1,4 +1,6 @@
-# Problem : count islands with total value divisible by K (medium)
+# Leetcode Problem 3619 : count islands with total value divisible by K 
+# Difficulty : Medium
+# Link : https://leetcode.com/problems/count-islands-with-total-value-divisible-by-k/
 
 class Solution:
     def countIslands(self, grid: List[List[int]], k: int) -> int:
@@ -53,3 +55,7 @@ class Solution:
                     if(summ %k == 0):
                         count+=1
         return count
+    
+# Time Complexity : O(m*n) where m is number of rows and n is number of columns
+# Space Complexity : O(m*n) for visited array
+# Explanation : We use BFS to traverse each island and calculate the sum of its elements.
