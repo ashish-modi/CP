@@ -1,0 +1,19 @@
+Boyer-Moore Voting Algorithm
+Intuition :
+
+The Boyer-Moore algorithm extends to finding up to two majority elements. 
+We maintain two candidates with their counts. When we see a candidate, we increment its count. 
+When we see a different element and both counts are positive, we decrement both. 
+When a count is 0, we replace that candidate. After one pass, we verify the candidates by counting their actual occurrences.
+
+Algorithm: 
+Initialize two candidates num1, num2 and their counts cnt1, cnt2 to 0.
+For each element:
+    If it matches num1, increment cnt1.
+    Else if it matches num2, increment cnt2.
+    Else if cnt1 == 0, set num1 = num and cnt1 = 1.
+    Else if cnt2 == 0, set num2 = num and cnt2 = 1.
+    Else decrement both counts.
+    Count actual occurrences of both candidates.
+    Add candidates with count greater than n / 3 to the result.
+Return the result.
